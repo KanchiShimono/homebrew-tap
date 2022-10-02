@@ -1,5 +1,5 @@
 class Mousequake < Formula
-  version "0.0.1"
+  version "0.0.2"
   desc "Simple tool for auto shaking mouse pointer"
   homepage "https://github.com/KanchiShimono/mousequake"
   license ""
@@ -7,14 +7,14 @@ class Mousequake < Formula
   if OS.mac?
     if Hardware::CPU.intel?
       url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-x86_64-apple-darwin.tar.gz.zip"
-      sha256 "78a3bebc5ab24ebedc316c59c31e2260b976f7c089946a95aeb55faaf61cdd66"
+      sha256 "80acd739b513d9e05d473d950351f9749016c8301ad20ebc14e90ac92322b48f"
     elsif Hardware::CPU.arm?
       url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-aarch64-apple-darwin.tar.gz.zip"
-      sha256 "a96f5bddcc55b15ada84f0c70817e189bccba97c222f05597793a63fed237550"
+      sha256 "308c52c6f68309ea64c9ee1ae4479d8a4679ff2fd82f665ff5e2454a178fb3b8"
     end
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-x86_64-unknown-linux-gnu.tar.gz.zip"
-    sha256 "27366354c4e74e59d94c1e28d30ec0178a61137390c084b97f5f97c402dc04fc"
+    sha256 "8b8cf1612705a326e54c8ddac35fab82b0a88d8012b8be4c8e0519e23b198c6e"
   end
 
   def install
