@@ -13,7 +13,7 @@ class Mousequake < Formula
       sha256 "cebd4a781a5d16790171983133a6cc09adec5bd34a563e4bbc048142b6d961b5"
     end
   elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-x86_64-unknown-linux-gnu.tar.gz"
+    url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-x86_64-unknown-linux-musl.tar.gz"
     sha256 "cf6760ef9e1b5ccadbd11a44473d343071fb450f4055dfd73b0347824bba9f11"
   end
 
