@@ -1,23 +1,23 @@
 class Assam < Formula
-  version "0.0.1-alpha.1"
   desc "AWS SAML authentication CLI tool for Azure Entra ID"
+  version "0.0.1-alpha.2"
   homepage "https://github.com/KanchiShimono/assam-rs"
   license ""
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/KanchiShimono/assam-rs/releases/download/v#{version}/assam-x86_64-apple-darwin.tar.gz"
-      sha256 "dbf3ac6d5a18187b06ebd4b520fc25e7d84061c0a4f4c040782d3f70abefd7ac"
+      sha256 "496b2a4de230ef1cca2ddbf4c60cb5059702773550284b7386b8e06d92ebe88b"
     elsif Hardware::CPU.arm?
       url "https://github.com/KanchiShimono/assam-rs/releases/download/v#{version}/assam-aarch64-apple-darwin.tar.gz"
-      sha256 "35a24279cf52656b036ca0e50d36c0750b6506ff5e7f7944559208818eb8c55b"
+      sha256 "d23ebb1485a0be645be5897b1a2c13a5129658573ca0bb111e7d77d5c398e6c1"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/KanchiShimono/assam-rs/releases/download/v#{version}/assam-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "9661e72592795b5fe8a4a99e9e3ea945eec6ef0c3a7e8e151af8d3516dfc69ec"
+      sha256 "d746ef7ced522ebe4434c8527572eff152350d02c04021b9b3a523ad6aa002a4"
     else
       odie "assam is only available for x86_64 architecture on Linux"
     end
@@ -25,7 +25,7 @@ class Assam < Formula
 
   def install
     bin.install "assam"
-    generate_completions_from_executable(bin/"assam", "completions")
+    generate_completions_from_executable(bin/"assam", "completion")
   end
 
   test do
