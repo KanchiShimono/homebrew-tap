@@ -1,5 +1,5 @@
 class Mousequake < Formula
-  version "0.0.4"
+  version "0.0.5"
   desc "Simple tool for automatically shaking the mouse pointer"
   homepage "https://github.com/KanchiShimono/mousequake"
   license ""
@@ -7,17 +7,17 @@ class Mousequake < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-x86_64-apple-darwin.tar.gz"
-      sha256 "262527fab2eec4403d23fc922760cb02c5bbffbee9e095c554fdc8c2fce9db25"
+      sha256 "ddba6e2d6647c8d03eb53aedec27080ade241d71069158b30fbbd7933a6d0627"
     elsif Hardware::CPU.arm?
       url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-aarch64-apple-darwin.tar.gz"
-      sha256 "d346586e807d2093848c1357f10b4eef770426a82d7b7a00029527e9946204c9"
+      sha256 "11d023712b9210d00b7ccb2f250ea7c02ac7f228531a51e21413ec8500d3a729"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "2c8d802538b0aa45f81fb28d219e51dc00f87bad301f93ad6a82be2e61f66e0d"
+      sha256 "e91a9ce98906b4afb3885a02107128cd68f72137b7d9ea378a2007a5ffff5a8e"
     else
       odie "mousequake is only available for x86_64 architecture on Linux"
     end
