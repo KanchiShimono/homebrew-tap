@@ -4,7 +4,7 @@ class Mousequake < Formula
   homepage "https://github.com/KanchiShimono/mousequake"
   license ""
 
-  if OS.mac?
+  on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-x86_64-apple-darwin.tar.gz"
       sha256 "262527fab2eec4403d23fc922760cb02c5bbffbee9e095c554fdc8c2fce9db25"
@@ -12,9 +12,15 @@ class Mousequake < Formula
       url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-aarch64-apple-darwin.tar.gz"
       sha256 "d346586e807d2093848c1357f10b4eef770426a82d7b7a00029527e9946204c9"
     end
-  elsif OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "2c8d802538b0aa45f81fb28d219e51dc00f87bad301f93ad6a82be2e61f66e0d"
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/KanchiShimono/mousequake/releases/download/v#{version}/mousequake-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "2c8d802538b0aa45f81fb28d219e51dc00f87bad301f93ad6a82be2e61f66e0d"
+    else
+      odie "mousequake is only available for x86_64 architecture on Linux"
+    end
   end
 
   def install
