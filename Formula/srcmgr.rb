@@ -1,24 +1,24 @@
 class Srcmgr < Formula
   desc "Simple repository manager"
   homepage "https://github.com/KanchiShimono/srcmgr"
-  version "0.0.1"
+  version "0.0.2"
   license ""
 
   on_macos do
     on_intel do
       url "https://github.com/KanchiShimono/srcmgr/releases/download/v#{version}/srcmgr-x86_64-apple-darwin.tar.gz"
-      sha256 "c99a82c5184c56b81e8caf971623d200ed5f29e0ec2c6191ebd07f0556b16165"
+      sha256 "50ac7ba06e719af70bd247e8b39acc04e85118f6d335ca9be1b46be0d9e77d26"
     end
     on_arm do
       url "https://github.com/KanchiShimono/srcmgr/releases/download/v#{version}/srcmgr-aarch64-apple-darwin.tar.gz"
-      sha256 "c6c05d5cc2050c03d57fa56bff475602de2f843f755a51f02c08a45ae1163036"
+      sha256 "5e455c7a910a420c30de5e001b0a1742c393f2d8edbda620966482516a3e9ccf"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/KanchiShimono/srcmgr/releases/download/v#{version}/srcmgr-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "ebf1600b251403f003a5b0b6897fd03bce4eca79f7a35e10f4f400a094a04b73"
+      sha256 "8e64fa0dcf5405b8f79bb11015b83be41ccfb55c3456b67c7089bbb2ec231350"
     end
   end
 
